@@ -3,6 +3,9 @@ package com.godlife.sampleservice;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+//jenkins file test
+//feature test
+//release
 @SpringBootApplication
 public class SampleServiceApplication {
 
