@@ -10,7 +10,6 @@ import com.godlife.sampleservice.service.SampleService;
 
 import lombok.AllArgsConstructor;
 
-
 @AllArgsConstructor
 @RestController
 public class SampleController {
