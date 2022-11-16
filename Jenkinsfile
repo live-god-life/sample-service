@@ -63,7 +63,7 @@ pipeline {
             steps {
                 echo 'Pull Docker Image & Docker Image Run'
                 sh "ssh -o StrictHostKeyChecking=no root@106.10.40.232 -p 2222
-                'docker rm \$(docker ps -aq -f name=sample); \
+                'docker rm \$(docker ps -aq -f name=sample); \n
                 docker run -d -e SPRING_PROFILES_ACTIVE=prod --name sample-service -p 80:80 onezo/sample-service'"
             }
             post {
