@@ -59,15 +59,14 @@ pipeline {
             }
         }
 
-        stage('Docker Run') {
+        stage('Run Docker Deploy Script') {
             steps {
                 echo 'Pull Docker Image & Docker Image Run'
-                sh "ssh -o StrictHostKeyChecking=no root@106.10.40.232 -p 2222 'docker rm -f \$(docker ps -aq -f name=sample)'"
-                sh "ssh -o StrictHostKeyChecking=no root@106.10.40.232 -p 2222 'docker run -d -e SPRING_PROFILES_ACTIVE=prod --name sample-service -p 80:80 onezo/sample-service'"
+                sh "ssh -o StrictHostKeyChecking=no root@106.10.40.232 -p 2222 '/root/DeployScript/sample-service-deploy.sh'"
             }
             post {
                 success {
-                    echo 'Successfully Docker Run'
+                    echo 'Successfully Run Docker Deploy Script'
                 }
                 failure {
                     echo 'Docker Run fail'
